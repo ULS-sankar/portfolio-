@@ -171,19 +171,20 @@ main{
 }
 
 /* ----==== Home Section ====-----  */
-#home{
+#home {
     height: 100vh;
-    width:100%;
-    background-image: url(image/bg-image.png);
+    width: 100%;
+    background-image: url('../image/bg-image.png');
     background-size: cover;
     background-attachment: fixed;
     display: flex;
     flex-direction: column;
-    justify-content: center ;
+    justify-content: center;
     padding: 70px;
-    position:relative;
-
+    position: relative;
+    background-color: #f0f0f0; /* Fallback color */
 }
+
 /* overlay */
 #home::before{
     content: '';
