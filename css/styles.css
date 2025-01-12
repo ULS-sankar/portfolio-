@@ -696,21 +696,25 @@ main{
 /* ----------------------------------------------------------------------- */
 
 /* ========================== Service Section Start========================== */
-#service{
+/* ========================== Service Section Start ========================== */
+#service {
     padding: 70px 30px;
     background-color: white;
 }
-#service .service-row{
+
+#service .service-row {
     margin-top: 50px;
     display: grid;
-    grid-template-columns: repeat(3,1fr);
-    grid-gap : 30px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
 }
-#service .service-row .service-box{
+
+#service .service-row .service-box {
     display: flex;
-    gap: 20px;   
+    gap: 20px;
 }
-#service .service-row .service-box .icon i{
+
+#service .service-row .service-box .icon i {
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -722,58 +726,182 @@ main{
     transition: 0.7s;
     text-align: center;
 }
-#service .service-row .service-box:hover .icon i{
+
+#service .service-row .service-box:hover .icon i {
     color: var(--themecolor);
     background-color: var(--bgcolor);
 }
-#service .service-row .service-box .ser-info h4{
+
+#service .service-row .service-box .ser-info h4 {
     color: var(--sideBGcolor);
     font-size: 20px;
     font-weight: 600;
 }
-#service .service-row .service-box .ser-info h4 + p{
+
+#service .service-row .service-box .ser-info h4 + p {
     color: var(--textBGcolor);
     font-size: 14px;
     font-weight: 500;
 }
-/* Mobile View */
-@media only screen and (max-width: 550px){
+
+/* ========================== Mobile View ========================== */
+@media only screen and (max-width: 550px) {
     #service {
-       padding: 50px 15px;
-        }
-    #service .service-row{
-        grid-template-columns: repeat (1, 1fr);
+        padding: 50px 15px;
+    }
+
+    #service .service-row {
+        grid-template-columns: repeat(1, 1fr);
         grid-gap: 15px;
     }
+
+    #service .service-row .service-box {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center;    /* Center-align contents */
+        text-align: center;
+    }
+
+    #service .service-row .service-box .icon i {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+        line-height: 38px;
+    }
+
+    #service .service-row .service-box .ser-info h4,
+    #service .service-row .service-box .ser-info p {
+        word-wrap: break-word;
+    }
 }
+/* ========================== Service Section End ========================== */
+
 /* ========================== Service Section End========================== */
 
 /* ------------------------------------------------------------------------- */
 /* ============================Contact Section STart=========================== */
-#contact{
+/* ========================== Combined Service & Contact Sections ========================== */
+
+/* ========================== Service Section Start ========================== */
+#service {
+    padding: 70px 30px;
+    background-color: white;
+}
+#service .service-row {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+}
+#service .service-row .service-box {
+    display: flex;
+    gap: 20px;
+}
+#service .service-row .service-box .icon i {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid var(--themecolor);
+    font-size: 22px;
+    line-height: 46px;
+    background-color: var(--themecolor);
+    color: var(--bgcolor);
+    transition: 0.7s;
+    text-align: center;
+}
+#service .service-row .service-box:hover .icon i {
+    color: var(--themecolor);
+    background-color: var(--bgcolor);
+}
+#service .service-row .service-box .ser-info h4 {
+    color: var(--sideBGcolor);
+    font-size: 20px;
+    font-weight: 600;
+}
+#service .service-row .service-box .ser-info h4 + p {
+    color: var(--textBGcolor);
+    font-size: 14px;
+    font-weight: 500;
+}
+/* ========================== Contact Section Start ========================== */
+/* ========================== Combined Service & Contact Sections ========================== */
+
+/* ========================== Service Section Start ========================== */
+#service {
+    padding: 70px 30px;
+    background-color: white;
+}
+#service .service-row {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+}
+#service .service-row .service-box {
+    display: flex;
+    gap: 20px;
+    flex-direction: column; /* Ensures proper alignment on smaller screens */
+}
+#service .service-row .service-box .icon i {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid var(--themecolor);
+    font-size: 22px;
+    line-height: 46px;
+    background-color: var(--themecolor);
+    color: var(--bgcolor);
+    transition: 0.7s;
+    text-align: center;
+}
+#service .service-row .service-box:hover .icon i {
+    color: var(--themecolor);
+    background-color: var(--bgcolor);
+}
+#service .service-row .service-box .ser-info {
+    word-wrap: break-word; /* Ensures long text wraps */
+    overflow: hidden; /* Prevents text from spilling */
+}
+#service .service-row .service-box .ser-info h4 {
+    color: var(--sideBGcolor);
+    font-size: 20px;
+    font-weight: 600;
+}
+#service .service-row .service-box .ser-info h4 + p {
+    color: var(--textBGcolor);
+    font-size: 14px;
+    font-weight: 500;
+    word-wrap: break-word;
+}
+/* ========================== Contact Section Start ========================== */
+#contact {
     padding: 70px 30px;
 }
-#contact .contact-row{
+#contact .contact-row {
     margin-top: 50px;
     display: flex;
     gap: 20px;
     width: 100%;
 }
-#contact .contact-row .contact-left{
-    flex-basis:40%;
-    min-width:40%;
-    background-color:white;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 20%);
+#contact .contact-row .contact-left,
+#contact .contact-row .contact-right {
+    word-wrap: break-word; /* Prevent text overflow */
+    overflow: hidden;
+}
+#contact .contact-row .contact-left {
+    flex-basis: 40%;
+    min-width: 40%;
+    background-color: white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     border-radius: 30px;
     padding: 30px;
 }
-#contact .contact-row .contact-left .icon-box{
+#contact .contact-row .contact-left .icon-box {
     display: flex;
     gap: 15px;
     align-items: center;
     margin: 30px 0;
 }
-#contact .contact-row .contact-left .icon-box .icon i{
+#contact .contact-row .contact-left .icon-box .icon i {
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -784,71 +912,60 @@ main{
     color: var(--themecolor);
     transition: 0.5s;
 }
-#contact .contact-row .contact-left .icon-box:hover .icon i{
+#contact .contact-row .contact-left .icon-box:hover .icon i {
     background-color: var(--themecolor);
     color: var(--bgcolor);
 }
-#contact .contact-row .contact-left .icon-box .info h4{
+#contact .contact-row .contact-left .icon-box .info h4 {
     font-size: 20px;
     color: var(--sideBGcolor);
     font-weight: 600;
 }
-#contact .contact-row .contact-left .icon-box .info h4 + p{
+#contact .contact-row .contact-left .icon-box .info h4 + p {
     color: var(--themecolor);
-    font-size: 15px;
-    font-weight: 500%;
-}
-#contact .contact-row .contact-right{
-    flex-basis: 60%;
-    min-width: 60%;
-    background-color: white;
-    box-shadow: 0 0 20px rgba(0, 0, 20%);
-    border-radius: 4px;
-    padding: 30px;
-}
-#contact .contact-row .contact-right form{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    margin: 20px 0;
-}
-#contact .contact-row .contact-right form input,
-#contact .contact-row .contact-right form textarea{
-    display: block;
-    width: 100%;
-    margin: 25px 0;
     font-size: 15px;
     font-weight: 500;
-    color: var(--themecolor);
-    padding: 10px 20px;
-    border: 2px solid lightgray;
-    border-radius: 2px; 
-    outline: none;
-    resize: none;
-    transition: 0.5s;
 }
-#contact .contact-row .contact-right form input:focus,
-#contact .contact-row .contact-right form textarea:focus{
-    border: 2PX solid var(--themecolor);
+#contact .contact-row .contact-right form input,
+#contact .contact-row .contact-right form textarea {
+    word-wrap: break-word;
+    overflow: hidden;
 }
-#contact .contact-row .contact-right form input[type=submit]{
-    background-color: var(--themecolor);
-    color: var(--bgColor);
-    border: 2px solid var(--themecolor);
-    font-size: 17px;
-    font-weight: 400;
-    cursor: pointer;
-}
-/* Mobile View */
-@media only screen and (max-width: 800px){
-    #contact{
-        padding: 50px;
+/* ========================== Responsive Design for Mobile View ========================== */
+@media only screen and (max-width: 800px) {
+    /* Service Section */
+    #service {
+        padding: 50px 15px;
     }
-    #contact.contact-row{
+    #service .service-row {
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 15px;
+    }
+    #service .service-row .service-box {
+        gap: 10px;
+    }
+
+    /* Contact Section */
+    #contact {
+        padding: 50px 15px;
+    }
+    #contact .contact-row {
         flex-direction: column;
         gap: 20px;
     }
+    #contact .contact-row .contact-left,
+    #contact .contact-row .contact-right {
+        flex-basis: 100%;
+        min-width: 100%;
+    }
+    #contact .contact-row .contact-left,
+    #contact .contact-row .contact-right {
+        padding: 20px; /* Adjust padding for smaller screens */
+    }
 }
+
+/* ========================== Combined Sections End ========================== */
+
 
 /* ============================Contact Section End=========================== */
 
