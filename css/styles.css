@@ -174,7 +174,7 @@ main{
 #home{
     height: 100vh;
     width:100%;
-    background-image: url(bg-image.png);
+    background-image: url(image/bg-image.png);
     background-size: cover;
     background-attachment: fixed;
     display: flex;
