@@ -874,12 +874,19 @@ main{
     word-wrap: break-word;
 }
 /* ========================== Contact Section Start ========================== */
+/* ========================== Contact Section Start ========================== */
+/* ========================== Combined Service & Contact Sections ========================== */
+
+/* ========================== Service Section Start ========================== */
 #contact {
     padding: 70px 30px;
+    background-color: #f9f9f9; /* Light background for the section */
+    color: var(--themecolor); /* Theme color for text */
 }
 #contact .contact-row {
     margin-top: 50px;
     display: flex;
+    flex-wrap: wrap; /* Ensure elements wrap for responsiveness */
     gap: 20px;
     width: 100%;
 }
@@ -887,51 +894,115 @@ main{
 #contact .contact-row .contact-right {
     word-wrap: break-word; /* Prevent text overflow */
     overflow: hidden;
-}
-#contact .contact-row .contact-left {
-    flex-basis: 40%;
-    min-width: 40%;
-    background-color: white;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-    border-radius: 30px;
+    flex: 1 1 40%; /* Columns share equal space */
+    background-color: #ffffff; /* Bright white card background */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Softer shadow for light theme */
+    border-radius: 20px;
     padding: 30px;
+    color: #333; /* Neutral dark text color */
+    min-width: 280px; /* Minimum width for responsiveness */
+    transition: box-shadow 0.3s;
+}
+#contact .contact-row .contact-left:hover,
+#contact .contact-row .contact-right:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Slightly elevated shadow on hover */
 }
 #contact .contact-row .contact-left .icon-box {
     display: flex;
     gap: 15px;
     align-items: center;
     margin: 30px 0;
+    color: var(--themecolor); /* Theme color for icons and text */
 }
 #contact .contact-row .contact-left .icon-box .icon i {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    border: 2px solid var(--themecolor);
+    border: 2px solid var(--themecolor); /* Circular border with theme color */
     text-align: center;
     line-height: 47px;
     font-size: 20px;
     color: var(--themecolor);
-    transition: 0.5s;
+    transition: background-color 0.3s, color 0.3s;
 }
 #contact .contact-row .contact-left .icon-box:hover .icon i {
-    background-color: var(--themecolor);
-    color: var(--bgcolor);
+    background-color: var(--themecolor); /* Filled icon background on hover */
+    color: #ffffff; /* White icon color for contrast */
 }
 #contact .contact-row .contact-left .icon-box .info h4 {
     font-size: 20px;
-    color: var(--sideBGcolor);
+    color: var(--themecolor); /* Theme color for headings */
     font-weight: 600;
 }
 #contact .contact-row .contact-left .icon-box .info h4 + p {
-    color: var(--themecolor);
+    color: #555; /* Slightly lighter neutral text for descriptions */
     font-size: 15px;
     font-weight: 500;
 }
 #contact .contact-row .contact-right form input,
 #contact .contact-row .contact-right form textarea {
-    word-wrap: break-word;
-    overflow: hidden;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc; /* Neutral border for inputs */
+    border-radius: 10px;
+    font-size: 14px;
+    font-family: inherit;
+    resize: none; /* Prevent textareas from being resized */
+    background-color: #ffffff; /* Bright input background */
+    color: #333; /* Neutral text color */
+    transition: border-color 0.3s;
 }
+#contact .contact-row .contact-right form input:focus,
+#contact .contact-row .contact-right form textarea:focus {
+    border-color: var(--themecolor); /* Highlight input on focus */
+    outline: none; /* Remove default outline */
+}
+
+/* ========================== Button Section - Hover & Active States ========================== */
+#contact .contact-row .contact-right form button {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--themecolor); /* Theme color button */
+    color: #ffffff; /* White button text */
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s ease;
+}
+
+#contact .contact-row .contact-right form button:hover {
+    background-color: #333; /* Darken button background on hover */
+    transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
+
+#contact .contact-row .contact-right form button:active {
+    background-color: var(--themecolor); /* Theme color button when clicked */
+    transform: scale(1); /* Reset the button size on click */
+}
+
+/* ========================== Responsive Design for Mobile View ========================== */
+@media only screen and (max-width: 800px) {
+    #contact {
+        padding: 50px 15px;
+    }
+    #contact .contact-row {
+        flex-direction: column; /* Stack columns vertically */
+        gap: 20px;
+    }
+    #contact .contact-row .contact-left,
+    #contact .contact-row .contact-right {
+        flex-basis: 100%; /* Full width for mobile */
+        min-width: unset;
+        padding: 20px; /* Adjust padding for smaller screens */
+    }
+    #contact .contact-row .contact-left .icon-box {
+        gap: 10px; /* Reduce gap for compact view */
+    }
+}
+
 /* ========================== Responsive Design for Mobile View ========================== */
 @media only screen and (max-width: 800px) {
     /* Service Section */
